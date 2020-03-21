@@ -35,3 +35,6 @@ def login(request):
 
 def register(request):
     return render(request, 'register.html')
+
+def list(request):
+    return render(request,'list.html')
