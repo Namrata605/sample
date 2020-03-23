@@ -112,36 +112,63 @@
 
             <h2 class="mb-5 text-black">Register</h2>
 
-            <form action="login" class="p-5 bg-white">
-             
+            
+
+            <form action="register" class="p-5 bg-white" method="post">
+                {% csrf_token %}
               <div class="row form-group">
                 
                 <div class="col-md-12">
-                  <label class="text-black" for="email">Email</label> 
-                  <input type="email" id="email" class="form-control" required>
+                  <label class="text-black"  for="email">Email</label> 
+                  <input type="email" id="email" name="email" class="form-control" required>
                 </div>
               </div>
 
               <div class="row form-group">
                 
                 <div class="col-md-12">
-                  <label class="text-black" for="name">Name</label> 
-                  <input type="text" id="name" class="form-control" required> 
+                  <label class="text-black"  for="name">FirstName</label> 
+                  <input type="text" id="name" name="firstname" class="form-control" required> 
                 </div>
               </div>
+
+              <div class="row form-group">
+                
+                <div class="col-md-12">
+                  <label class="text-black" for="name">Last Name</label> 
+                  <input type="text" id="name" name="lastname" class="form-control" required> 
+                </div>
+              </div>
+
+              <div class="row form-group">
+                
+                <div class="col-md-12">
+                  <label class="text-black" for="name">User Name</label> 
+                  <input type="text" id="name" name="username" class="form-control" required> 
+                </div>
+              </div>
+
 
 
               <div class="row form-group">
                 <div class="col-md-12">
                   <label class="text-black" for="subject">Password</label> 
-                  <input type="password" id="subject" class="form-control" required>
+                  <input type="password" id="subject" name="password" class="form-control" required>
                 </div>
               </div>
 
               <div class="row form-group">
                 <div class="col-md-12">
                   <label class="text-black" for="subject">Re-type Password</label> 
-                  <input type="password" id="subject" class="form-control" required>
+                  <input type="password" id="subject" name="cpassword" class="form-control is-valid" required>
+                  <div class="valid-feedback" >
+            
+                      {% for message in messages %}
+                         {{message}}
+          
+                      {% endfor %}
+                      
+                  </div>
                 </div>
               </div>
 
