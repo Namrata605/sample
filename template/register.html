@@ -94,7 +94,7 @@
             <div class="row justify-content-center mt-5">
               <div class="col-md-8 text-center">
                 <h1>Sign Up</h1>
-                <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                <p class="mb-0"></p>
               </div>
             </div>
 
@@ -112,36 +112,63 @@
 
             <h2 class="mb-5 text-black">Register</h2>
 
-            <form action="login" class="p-5 bg-white">
-             
+            
+
+            <form action="register" class="p-5 bg-white" method="post">
+                {% csrf_token %}
               <div class="row form-group">
                 
                 <div class="col-md-12">
-                  <label class="text-black" for="email">Email</label> 
-                  <input type="email" id="email" class="form-control" required>
+                  <label class="text-black"  for="email">Email</label> 
+                  <input type="email" id="email" name="email" class="form-control" required>
                 </div>
               </div>
 
               <div class="row form-group">
                 
                 <div class="col-md-12">
-                  <label class="text-black" for="name">Name</label> 
-                  <input type="text" id="name" class="form-control" required> 
+                  <label class="text-black"  for="name">FirstName</label> 
+                  <input type="text" id="name" name="firstname" class="form-control" required> 
                 </div>
               </div>
+
+              <div class="row form-group">
+                
+                <div class="col-md-12">
+                  <label class="text-black" for="name">Last Name</label> 
+                  <input type="text" id="name" name="lastname" class="form-control" required> 
+                </div>
+              </div>
+
+              <div class="row form-group">
+                
+                <div class="col-md-12">
+                  <label class="text-black" for="name">User Name</label> 
+                  <input type="text" id="name" name="username" class="form-control" required> 
+                </div>
+              </div>
+
 
 
               <div class="row form-group">
                 <div class="col-md-12">
                   <label class="text-black" for="subject">Password</label> 
-                  <input type="password" id="subject" class="form-control" required>
+                  <input type="password" id="subject" name="password" class="form-control" required>
                 </div>
               </div>
 
               <div class="row form-group">
                 <div class="col-md-12">
                   <label class="text-black" for="subject">Re-type Password</label> 
-                  <input type="password" id="subject" class="form-control" required>
+                  <input type="password" id="subject" name="cpassword" class="form-control is-valid" required>
+                  <div class="valid-feedback" >
+            
+                      {% for message in messages %}
+                         {{message}}
+          
+                      {% endfor %}
+                      
+                  </div>
                 </div>
               </div>
 
@@ -192,7 +219,7 @@
             <div class="row">
               <div class="col-md-6">
                 <h2 class="footer-heading mb-4">About</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident rerum unde possimus molestias dolorem fuga, illo quis fugiat!</p>
+                <p>Help_24 connects people with great local businesses. With unmatched local business information,photos and contact.</p>
               </div>
               
               <div class="col-md-3">
@@ -229,7 +256,7 @@
             <div class="border-top pt-5">
             <p>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </p>
             </div>
